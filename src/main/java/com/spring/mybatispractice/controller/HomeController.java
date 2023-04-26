@@ -8,22 +8,22 @@ public class HomeController {
 
     @GetMapping("/")
     public String index() {
-        return "/WEB-INF/views/home.jsp";
+        return "home";
     }
 
     @GetMapping("/study")
     public String study() {
-        return "/WEB-INF/views/study.jsp";
+        return "study";
     }
 
     @GetMapping("/login")
     public String login() {
-        return "/WEB-INF/views/login.jsp";
+        return "login";
     }
 
     @GetMapping("/user")
     public String user() {
-        return "/WEB-INF/views/user.jsp";
+        return "user";
     }
 
 }
