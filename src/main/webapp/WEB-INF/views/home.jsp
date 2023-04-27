@@ -17,13 +17,13 @@
 <h1 class="visually-hidden">Heroes examples</h1>
 
 <div class="px-4 py-5 my-5 text-center">
-  <img class="d-block mx-auto mb-4" src="/img/lee.jpg" alt="" width="200" height="200">
+  <img class="d-block mx-auto mb-4" src="${pageContext.request.contextPath}/img/lee.jpg" alt="" width="200" height="200">
   <h1 class="display-5 fw-bold text-body-emphasis">Spring study</h1>
   <div class="col-lg-6 mx-auto">
     <p class="lead mb-4">mybatis 프로젝트  연습을 위한 공간</p>
     자바 버전 : 11<br/>
     개발툴 : Intellij<br>
-    DBMS : oracle 19c<br/>
+    DBMS : oracle 18c<br/>
     View : jsp<br>
     Mapper : mybatis
   </div>
