@@ -1,4 +1,13 @@
+<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.List" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%
+  List<Map<String, String>> list = (List<Map<String, String>>) request.getAttribute("list");
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,26 +33,15 @@
     <div class="col">등록일자</div>
   </div>
 
-  <div class="row mb-2">
-    <div class="col">NO</div>
-    <div class="col">공부일자</div>
-    <div class="col">공부내용</div>
-    <div class="col">등록일자</div>
-  </div>
 
+  <% for(Map<String, String> li : list) {%>
   <div class="row mb-2">
-    <div class="col">NO</div>
-    <div class="col">공부일자</div>
-    <div class="col">공부내용</div>
-    <div class="col">등록일자</div>
+    <div class="col"><%=li.get("KEY_ID")%></div>
+    <div class="col"><%=li.get("STUDY_DAY")%></div>
+    <div class="col"><%=li.get("CONTENTS")%></div>
+    <div class="col"><%=li.get("REG_DAY") %></div>
   </div>
-
-  <div class="row mb-2">
-    <div class="col">NO</div>
-    <div class="col">공부일자</div>
-    <div class="col">공부내용</div>
-    <div class="col">등록일자</div>
-  </div>
+  <% } %>
 
 </div>
 

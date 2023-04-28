@@ -3,9 +3,11 @@ package com.spring.mybatispractice.controller;
 import com.spring.mybatispractice.service.StudyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -23,8 +25,7 @@ public class HomeController {
     }
 
     @GetMapping("/study")
-    @ResponseBody
-    public String study() {
+    public String study(HttpServletRequest request, Model model) {
 
         List<Map<String, String>> list = new ArrayList<>();
         list = studyList.studyList();
@@ -35,7 +36,11 @@ public class HomeController {
             System.out.println(stringStringMap.get("CONTENTS"));
             System.out.println(stringStringMap.get("REG_DAY"));
         }
-        return "--";
+
+        request.setAttribute("list", list);
+        //model.addAttribute("list", list);
+
+        return "study";
     }
 
     @GetMapping("/login")
