@@ -1,11 +1,11 @@
 <%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
-<%@ page import="java.util.Map" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.spring.mybatispractice.vo.VoStudy" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%
-  List<Map<String, String>> list = (List<Map<String, String>>) request.getAttribute("list");
+  List<VoStudy> list = (List<VoStudy>) request.getAttribute("list");
 %>
 
 <!DOCTYPE html>
@@ -34,12 +34,12 @@
   </div>
 
 
-  <% for(Map<String, String> li : list) {%>
+  <% for(VoStudy li : list) {%>
   <div class="row mb-2">
-    <div class="col"><%=li.get("KEY_ID")%></div>
-    <div class="col"><%=li.get("STUDY_DAY")%></div>
-    <div class="col"><%=li.get("CONTENTS")%></div>
-    <div class="col"><%=li.get("REG_DAY") %></div>
+    <div class="col"><%=li.getKEY_ID()%></div>
+    <div class="col"><%=li.getSTUDY_DAY()%></div>
+    <div class="col"><%=li.getCONTENTS()%></div>
+    <div class="col"><%=li.getREG_DAY() %></div>
   </div>
   <% } %>
 

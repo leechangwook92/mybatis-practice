@@ -1,6 +1,7 @@
 package com.spring.mybatispractice.service;
 
 import com.spring.mybatispractice.dao.StudyDao;
+import com.spring.mybatispractice.vo.VoStudy;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +15,8 @@ public class StudyService {
 
     private final StudyDao studyDao;
 
-    public List<Map<String, String>> studyList() {
-        List<Map<String, String>> list = new ArrayList<>();
+    public List<VoStudy> studyList() {
+        List<VoStudy> list = new ArrayList<>();
         list = studyDao.studyList();
         return list;
     }

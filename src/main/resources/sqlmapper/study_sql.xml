@@ -5,7 +5,17 @@
 
 <mapper namespace="com.spring.mybatispractice.dao.StudyDao">
 
-    <select id="studyList" resultType="map">
+    <select id="studyList_bak" resultType="map">
+        SELECT
+            to_char(key_id) as key_id,
+            study_day,
+            contents,
+            to_char(reg_day,'yyyy.mm.dd hh24mi') as reg_day
+        FROM
+            study_record
+    </select>
+
+    <select id="studyList" resultType="com.spring.mybatispractice.vo.VoStudy">
         SELECT
             to_char(key_id) as key_id,
             study_day,
