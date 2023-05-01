@@ -14,8 +14,15 @@
         FROM
             study_record
     </select>
+    
+<!--    <resultMap id="map_voStudy" type="com.spring.mybatispractice.vo.VoStudy">-->
+<!--        <result column="key_id" property="keyId" jdbcType="NVARCHAR" javaType="String" />-->
+<!--        <result column="study_day" property="studyDay" jdbcType="NVARCHAR" javaType="String" />-->
+<!--        <result column="contents" property="contents" jdbcType="NVARCHAR" javaType="String" />-->
+<!--        <result column="reg_day" property="regDay" jdbcType="NVARCHAR" javaType="String" />-->
+<!--    </resultMap>-->
 
-    <select id="studyList" resultType="com.spring.mybatispractice.vo.VoStudy">
+    <select id="studyList"  resultType="com.spring.mybatispractice.vo.VoStudy">
         SELECT
             to_char(key_id) as key_id,
             study_day,

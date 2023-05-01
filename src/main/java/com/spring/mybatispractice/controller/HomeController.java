@@ -3,6 +3,7 @@ package com.spring.mybatispractice.controller;
 import com.spring.mybatispractice.service.StudyService;
 import com.spring.mybatispractice.vo.VoStudy;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @Controller
 @RequiredArgsConstructor
 public class HomeController {
@@ -30,10 +32,10 @@ public class HomeController {
         list = studyList.studyList();
 
         for (VoStudy stringStringMap : list) {
-            System.out.println(stringStringMap.getKEY_ID());
-            System.out.println(stringStringMap.getSTUDY_DAY());
-            System.out.println(stringStringMap.getCONTENTS());
-            System.out.println(stringStringMap.getREG_DAY());
+            log.info(stringStringMap.getKeyId());
+            log.info(stringStringMap.getStudyDay());
+            log.info(stringStringMap.getContents());
+            log.info(stringStringMap.getRegDay());
         }
 
         //request.setAttribute("list", list);

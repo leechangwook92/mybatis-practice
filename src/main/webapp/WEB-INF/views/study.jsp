@@ -36,10 +36,10 @@
 
   <% for(VoStudy li : list) {%>
   <div class="row mb-2">
-    <div class="col"><%=li.getKEY_ID()%></div>
-    <div class="col"><%=li.getSTUDY_DAY()%></div>
-    <div class="col"><%=li.getCONTENTS()%></div>
-    <div class="col"><%=li.getREG_DAY() %></div>
+    <div class="col"><%=li.getKeyId()%></div>
+    <div class="col"><%=li.getStudyDay()%></div>
+    <div class="col"><%=li.getContents()%></div>
+    <div class="col"><%=li.getRegDay() %></div>
   </div>
   <% } %>
 
